@@ -19,6 +19,20 @@ class Plupload extends Widget
 {
     public $url;
 
+    public $uploader;
+    
+    /**
+     * auto start after select files 
+     *
+     * @var bool
+     */ 
+    public $startOnSelect = true;
+    
+    /**
+     * htmlOptions of container
+     *
+     * @var array
+     */ 
     public $htmlOptions = [];
 
     /**
@@ -76,9 +90,10 @@ class Plupload extends Widget
     {
         // Make sure URL is provided
         if (empty($this->url)) throw new Exception(Yii::t('yii','{class} must specify "url" property value.', ['{class}' => get_class($this)]));
-
-
-        $uploader = uniqid('uploader_');
+       
+        // Unique uploader
+        if (!isset($this->uploader)) $this->uploader = uniqid('uploader_');
+        $uploader = $this->uploader;
 
 
         if (!isset($this->htmlOptions['id'])) $this->htmlOptions['id'] = $this->getId();
@@ -115,11 +130,14 @@ class Plupload extends Widget
 
 
         // Generate event JavaScript
-        $events = "$uploader.bind('QueueChanged', function(up, file){
-            if (up.files.length > 0 && $uploader.state !== 2){
-                $uploader.start();                    
-            }
-        });\n";
+        $events = '';
+        if ((bool)$this->startOnSelect) {
+            $events .= "$uploader.bind('QueueChanged', function(up, file){
+                if (up.files.length > 0 && $uploader.state !== 2){
+                    $uploader.start();                    
+                }
+            });\n";
+        }
         foreach ($this->events as $event => $callback) $events .= "$uploader.bind('$event', $callback);\n";
 
 
