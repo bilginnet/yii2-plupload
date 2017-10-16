@@ -93,7 +93,7 @@ Let's add in your _form file
 ]); ?>
 ````
 
-Please refer to the Plupload documentation: http://www.plupload.com/documentation.php
+Please refer to the Plupload documentation: http://www.plupload.com/docs/v2/pluploadQueue
 
 
 Notes
