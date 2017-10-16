@@ -49,6 +49,25 @@ Let's add in your _form file
 ````php
 <?= \bilginnet\plupload\Plupload::widget([
     'url' => ['plupload'], // sync url name to action name in controller file
+    
+    // optional unique name of uploader
+    'uploader' => uniqid('uploader_'),  // $uploaderName = uniqid('uploader_');
+    // auto start when files selected default true
+    // you can set false this if you want to start uploader when form is submit
+    /* 
+    sample: 
+    $("button[type='submit']").click(function(event){
+        event.preventDefault(); 
+        var uploader = '<?= $uploaderName ?>';
+        
+        uploader.start();        
+        uploader.bind("UploadComplete", function(up, files) {
+            $("form").submit();
+        });
+    }); 
+    */
+    'startOnSelect' => true
+    
     'browseLabel' => 'Upload',
     'browseOptions' => ['id' => 'browse', 'class' => 'btn btn-success'],
     'options' => [
