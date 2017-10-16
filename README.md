@@ -74,3 +74,13 @@ Let's add in your _form file
 ````
 
 Please refer to the Plupload documentation: http://www.plupload.com/documentation.php
+
+
+Notes
+-----
+You can use multiple widgets in 1 file 
+sample:
+````php
+<?= \bilginnet\plupload\Plupload::widget($options1); ?>
+<?= \bilginnet\plupload\Plupload::widget($options2); ?>
+````
