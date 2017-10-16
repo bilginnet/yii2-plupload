@@ -8,7 +8,7 @@ use yii\web\View;
 
 class PluploadAsset extends AssetBundle
 {
-    public $sourcePath = '@bilginnet/plupload/assets';
+    public $sourcePath = __DIR__ '/assets';
     public $jsOptions = ['position' => View::POS_END];
 
     public $js = [
