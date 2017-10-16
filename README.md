@@ -35,7 +35,8 @@ public function actions() {
     return [
         'plupload' => [
             'class' => PluploadAction::className(),
-            'targetDir' => '@webroot/uploads' // upload path - default is '@webroot/uploads' or set your path sample: '@yourpath'
+            // upload path - default is '@webroot/uploads' or set your path sample: '@yourpath'
+            'targetDir' => '@webroot/uploads',
             'onComplete' => function ($filename, $params) {
                 // Do something with file
             }
