@@ -29,7 +29,7 @@ to the require section of your `composer.json` file.
 Usage
 -----
 
-Let's add in controllers file
+Let's add in controller file
 ````php
 public function actions() {
     return [
