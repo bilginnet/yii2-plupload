@@ -48,7 +48,7 @@ public function actions() {
 Let's add in your _form file
 ````php
 <?= \bilginnet\plupload\Plupload::widget([
-    'url' => ['plupload'],
+    'url' => ['plupload'], // sync url name to action name in controller file
     'browseLabel' => 'Upload',
     'browseOptions' => ['id' => 'browse', 'class' => 'btn btn-success'],
     'options' => [
