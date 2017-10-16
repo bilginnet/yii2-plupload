@@ -39,6 +39,7 @@ class Plupload extends Widget
      * Options to pass directly to the JavaScript plugin.
      * Please refer to the Plupload documentation:
      * @link http://www.plupload.com/documentation.php
+     *
      * @var array
      */
     public $options = [];
@@ -50,6 +51,7 @@ class Plupload extends Widget
      * event that is fired when a file is uploaded without error.
      * NOTE: events signatures should all have a first argument for event, in
      * addition to the arguments documented on the Plupload website.
+     *
      * @var array
      */
     public $events = [];
