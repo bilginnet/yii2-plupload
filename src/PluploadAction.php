@@ -10,7 +10,7 @@ use yii\web\Response;
 
 class PluploadAction extends Action
 {
-    public $targetDir = '@webroot';
+    public $targetDir = '@webroot/uploads';
     public $cleanupTargetDir = true; // Remove old files
     public $maxFileAge = 18000; // 5 * 3600 // Temp file age in seconds
 
