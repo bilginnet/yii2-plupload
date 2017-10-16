@@ -1,9 +1,9 @@
 {
   "name": "bilginnet/yii2-plupload",
   "description": "Yii2 Plupload Queue Widget",
-  "type": "yii2-widget",
+  "type": "yii2-extension",
   "keywords": ["yii2","extension","plupload","widget"],
-  "license": "GNU",
+  "license": "MIT",
   "authors": [
     {
       "name": "Ercan Bilgin",
