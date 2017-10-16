@@ -1,0 +1,23 @@
+{
+  "name": "bilginnet/yii2-plupload",
+  "description": "Yii2 Plupload Queue Widget",
+  "type": "yii2-widget",
+  "keywords": ["yii2","extension","plupload","widget"],
+  "license": "GNU",
+  "authors": [
+    {
+      "name": "Ercan Bilgin",
+      "email": "bilginnet@gmail.com",
+      "homepage": "https://github.com/bilginnet?tab=repositories"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*",
+    "yiisoft/yii2-bootstrap": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "bilginnet\\plupload\\": "src/"
+    }
+  }
+}
