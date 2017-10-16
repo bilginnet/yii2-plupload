@@ -34,7 +34,7 @@ Let's add in controller file
 public function actions() {
     return [
         'plupload' => [
-            'class' => PluploadAction::className(),
+            'class' => \bilginnet\plupload\PluploadAction::className(),
             // upload path - default is '@webroot/uploads' or set your path sample: '@yourpath'
             'targetDir' => '@webroot/uploads',
             'onComplete' => function ($filename, $params) {
@@ -47,7 +47,7 @@ public function actions() {
 
 Let's add in your _form file
 ````php
-<?= \backend\components\Plupload::widget([
+<?= \bilginnet\plupload\Plupload::widget([
     'url' => ['ajax-upload'],
     'browseLabel' => 'Upload',
     'browseOptions' => ['id' => 'browse', 'class' => 'btn btn-success'],
