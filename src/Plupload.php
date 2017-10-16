@@ -19,6 +19,11 @@ class Plupload extends Widget
 {
     public $url;
 
+    /**
+     * unique name of uploader
+     *
+     * @var string
+     */
     public $uploader;
     
     /**
