@@ -51,7 +51,7 @@ Let's add in your _form file
     'url' => ['plupload'], // sync url name to action name in controller file
     
     // optional unique name of uploader
-    // will set automaticall if not set
+    // will set automatically if not set
     'uploader' => uniqid('uploader_'),  // $uploaderName = uniqid('uploader_');
     
     // auto start when files selected default true
