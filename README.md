@@ -59,12 +59,12 @@ Let's add in your _form file
     sample: 
     $("button[type='submit']").click(function(event){
         event.preventDefault(); 
-        var uploader = '<?= $uploaderName ?>';
-        
-        uploader.start();        
-        uploader.bind("UploadComplete", function(up, files) {
+        var myUploader = '<?= $uploaderName ?>';
+
+        myUploader.bind("UploadComplete", function(uploader, files) {
             $("form").submit();
         });
+        myUploader.start();
     }); 
     */
     'startOnSelect' => true
