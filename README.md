@@ -35,7 +35,7 @@ public function actions() {
     return [
         'plupload' => [
             'class' => \bilginnet\plupload\PluploadAction::className(),
-            // upload path - default is '@webroot/uploads' or set your path sample: '@yourpath'
+            // upload path from alias - default is '@webroot/uploads' or set your alias path sample: '@yourpath'
             'targetDir' => '@webroot/uploads',
             'onComplete' => function ($filename, $params) {
                 // Do something with file
