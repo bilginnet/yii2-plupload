@@ -60,13 +60,28 @@ Let's add in your _form file
     sample: 
     $("button[type='submit']").click(function(event){
         event.preventDefault(); 
-        var myUploader = '<?= $uploaderName ?>';
+        var myUploader = <?= $uploaderName ?>;
 
         myUploader.bind("UploadComplete", function(uploader, files) {
             $("form").submit();
         });
         myUploader.start();
     }); 
+    -- or --
+    -- this is better way
+    $('form').on('beforeSubmit', function(event, jqXHR, settings) {
+        var form = $(this);
+        if(form.find('.has-error').length) {
+            return false;
+        }
+        
+        var myUploader = <?= $uploaderName ?>;
+
+        myUploader.bind("UploadComplete", function(uploader, files) {
+            $("form").submit();
+        });
+        myUploader.start();        
+    });
     */
     'startOnSelect' => true
     
