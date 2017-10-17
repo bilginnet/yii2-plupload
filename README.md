@@ -52,7 +52,7 @@ Let's add in your _form file
     
     // optional unique name of uploader
     // will set automatically if not set
-    'uploader' => uniqid('uploader_'),  // $uploaderName = uniqid('uploader_');
+    'uploader' => $uploaderName = uniqid('uploader_'),
     
     // auto start when files selected default true
     // you can set false this if you want to start uploader when form submitting
