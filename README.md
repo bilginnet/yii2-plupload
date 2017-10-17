@@ -69,7 +69,7 @@ Let's add in your _form file
         var myUploader = <?= $uploaderName ?>;
 
         myUploader.bind("UploadComplete", function(uploader, files) {
-            $("form").submit();
+            // do something
         });
         myUploader.start();        
     });
