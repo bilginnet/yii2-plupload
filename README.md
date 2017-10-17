@@ -55,20 +55,9 @@ Let's add in your _form file
     'uploader' => uniqid('uploader_'),  // $uploaderName = uniqid('uploader_');
     
     // auto start when files selected default true
-    // you can set false this if you want to start uploader when form is submit
+    // you can set false this if you want to start uploader when form submitting
     /* 
     sample: 
-    $("button[type='submit']").click(function(event){
-        event.preventDefault(); 
-        var myUploader = <?= $uploaderName ?>;
-
-        myUploader.bind("UploadComplete", function(uploader, files) {
-            $("form").submit();
-        });
-        myUploader.start();
-    }); 
-    -- or --
-    -- this is better way
     $('form').on('beforeSubmit', function(event, jqXHR, settings) {
         var form = $(this);
         if(form.find('.has-error').length) {
