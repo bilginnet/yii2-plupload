@@ -36,6 +36,8 @@ public function actions() {
         'plupload' => [
             'class' => \bilginnet\plupload\PluploadAction::className(),
             // upload path from alias - default is '@webroot/uploads' or set your alias path sample: '@yourpath'
+            // set your alias into config in your main-local config file before return[]
+            // Yii::setAlias('@yourpath', '@webroot/uploads/'); 
             'targetDir' => '@webroot/uploads',
             'onComplete' => function ($filename, $params) {
                 // Do something with file
