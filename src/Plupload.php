@@ -97,7 +97,7 @@ class Plupload extends Widget
         if (empty($this->url)) throw new Exception(Yii::t('yii','{class} must specify "url" property value.', ['{class}' => get_class($this)]));
        
         // Unique uploader
-        if (!isset($this->uploader)) $this->uploader = uniqid('uploader_');
+        if (empty($this->uploader)) $this->uploader = uniqid('uploader_');
         $uploader = $this->uploader;
 
 
