@@ -39,7 +39,7 @@ public function actions() {
             // set your alias into config in your main-local config file before return[]
             // Yii::setAlias('@yourpath', '@webroot/uploads/'); 
             'targetDir' => '@webroot/uploads',
-            'onComplete' => function ($filename, $params) {
+            'uploadComplete' => function ($$filePath, $params) {
                 // Do something with file
             }
         ],
@@ -60,19 +60,44 @@ Let's add in your _form file
     // you can set false this if you want to start uploader when form submitting
     /* 
     sample: 
-    $('form').on('beforeSubmit', function(event, jqXHR, settings) {
-        var form = $(this);
-        if(form.find('.has-error').length) {
-            return false;
-        }
+    $('button[type="submit"]').click(function(event) {
         
-        var myUploader = <?= $uploaderName ?>;
-
-        myUploader.bind("UploadComplete", function(uploader, files) {
-            // do something
+        var _form = $('form');
+        
+        // ajax form validate
+        $.ajax({
+            type: 'post',
+            url: 'ajaxValidateActionUrl', // set your url
+            data: _form.serializeArray()
+        }).done(function(data) {            
+            if (data === 'true') {
+                // ajax validate is true
+            
+                var myUploader = <?= $uploaderName ?>;
+                myUploader.bind("UploadComplete", function(uploader, files) {
+                    // do something
+                    
+                    _form.submit();
+                });
+                myUploader.start();
+                        
+            } else {
+                // ajax validate is false
+                _form.submit();
+            }
         });
-        myUploader.start();        
     });
+    // in controller ajaxValidateAction
+    public function actionAjaxValidate() {
+        $model = new Model();
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            if ($model->validate()) {
+                print_r('true');
+            } else {
+                print_r('false');
+            }
+        }    
+    }
     */
     'startOnSelect' => true
     
