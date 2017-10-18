@@ -50,7 +50,7 @@ public function actions() {
 Let's add in your _form file
 ````php
 <?= \bilginnet\plupload\Plupload::widget([
-    'url' => ['plupload'], // sync url name to action name in controller file
+    'url' => ['plupload'], // sync url name to action name in controller actions
     
     // optional unique name of uploader
     // will set automatically if not set
