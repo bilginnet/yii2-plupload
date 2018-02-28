@@ -39,7 +39,7 @@ public function actions() {
             // set your alias into config in your main-local config file before return[]
             // Yii::setAlias('@yourpath', '@webroot/uploads/'); 
             'targetDir' => '@webroot/uploads',
-            'uploadComplete' => function ($$filePath, $params) {
+            'uploadComplete' => function ($filePath, $params) {
                 // Do something with file
             }
         ],
