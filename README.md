@@ -15,13 +15,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist bilginnet/yii2-plupload "dev-master"
+php composer.phar require --prefer-dist bilginnet/yii2-plupload
 ```
 
 or add
 
 ```
-"bilginnet/yii2-plupload": "dev-master"
+"bilginnet/yii2-plupload": "~1.0"
 ```
 to the require section of your `composer.json` file.
 
